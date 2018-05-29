@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input{
+				outline:none;
+			/*	placeholder:"hahha";*/
+			}
+		</style>
+	</head>
+	<body>
+		<form action="http://www.itheima.com" method="post">
+			<label>用户名</label><input type="text" name="user"/><br>
+			<label>密码</label><input type="password" name="pwd"><br>
+			<label>性别</label>
+			<input type="radio" name="sex" id="sex" value="0" />男
+			<input type="radio" name="sex" value="1"  />女
+			<br>
+			<label>爱好</label>
+			<input type="checkbox" name="hobby" value="sing">唱歌
+			<input type="checkbox" name="hobby" value="dance">跳舞
+			<input type="checkbox" name="hobby" value="run">跑步
+			<br>
+			<label>相片</label><input type="file" name="pic" value="3" />
+			<br>
+			<label>按钮</label><input type="button" name="btn" />
+			<label>个人描述</label>
+			<textarea name="about"></textarea>
+			<br>
+			<label>籍贯</label>
+			<select name="site">
+				<option value="0">北京</option>
+				<option value="1">广东</option>
+				<option value="2">河南</option>
+			</select>
+			<br>
+			
+			
+			
+			<br />
+			<input type="submit" value="提交"/>
+			<input type="reset" value="重置">
+		</form>
+	</body>
+</html>
