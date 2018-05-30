@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="启动单次定时器" id="set_one">
+		<input type="button" value="关闭单次定时器" id="clear_one">
+		<input type="button" value="启动多次定时器" id="set_internal">
+		<input type="button" value="关闭多次定时器" id="clear_internal">
+	</body>
+	<script>
+		var oSetOne = document.getElementById('set_one');
+		var oClearOne = document.getElementById('clear_one');
+		var oSetInternal = document.getElementById('set_internal');
+		var oClearInternal = document.getElementById('clear_internal');
+		
+		var one_temp= null;
+		var internal_temp= null;
+		oSetOne.onclick = function(){
+			one_temp = setTimeout(boom,2000);
+		}
+		
+		oClearOne.onclick = function(){
+			clearTimeout(one_temp);
+		}
+		
+		oSetInternal.onclick = function(){
+			internal_temp = setInterval(boom,2000);
+		}
+		
+		oClearInternal.onclick = function(){
+			clearInterval(internal_temp);
+		}
+		
+		
+		function boom(){
+			alert('计时结束了');
+		}
+	</script>
+</html>

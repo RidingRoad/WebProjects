@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main1.css">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+        请写出代码，实现：
+        1、点击“弹出弹框按钮”显示弹框
+		2、弹框显示后，实现秒数的倒计时，秒数为0时自动隐藏弹框
+		3、倒计时过程中点击“X”按钮可以隐藏弹框
+
+        */
+       window.onload = function()
+       {
+       		var oBtn = document.getElementById('btn01');
+       		var oMain = document.getElementById('pop');
+       		var oCount = document.getElementById('count');
+       		var oShut = document.getElementById('shutoff');
+       		
+       		//点击弹出窗口，弹出计时并倒计时结束后自动关闭
+       		oBtn.onclick = function()
+       		{
+       			
+       			oMain.style.display = 'block';
+       			var time_left = 5;//每次点击后时间都是从5开始倒计时
+       			var timer = setInterval(function()
+       			{
+       				time_left--;
+	       			oCount.innerHTML = time_left;
+					if(time_left<1)
+					{
+						oMain.style.display = 'none';
+						//重置倒计时的第一个显示的数值为5
+						oCount.innerHTML = 5;
+						clearInterval(timer);
+					}
+       			},1000)
+       		
+       		//点击关闭窗口关闭并重置内容
+       		oShut.onclick = function(){
+       			oMain.style.display = 'none';
+       			oCount.innerHTML = 5;
+				clearInterval(timer);
+       		}
+       		
+       		}
+       }
+       
+       
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="弹出弹框" id="btn01">
+    <div class="pop_main" id="pop">
+        <div class="pop_con">
+            <div class="pop_title">
+                <h3>系统提示</h3>
+                <a href="#" id="shutoff">×</a>
+            </div>
+            <div class="pop_detail">
+                <p class="pop_text">亲！请关注近期的优惠活动！</p>
+            </div>
+            <div class="pop_footer">
+                还有<span id="count">5</span>秒自动关闭弹框               
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

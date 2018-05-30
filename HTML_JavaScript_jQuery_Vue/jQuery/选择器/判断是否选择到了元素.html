@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//jQuery 入口
+			$(function(){
+				alert($('div1').length);//0
+				alert($('div').length);//1
+				//获取div样式
+				alert($('div').css('color'));
+				//设置样式
+				$('div').css('color','red');//设置一个样式，使用逗号隔开属性和值,引号必须加上
+				$('div').css({'height':'200px','width':'200px','backgroundColor':'pink'});
+			});//设置多个样式时使用字典形式，属性的引号可加可不加，但还是为了避免不必要的麻烦，统一都加上引号
+		</script>
+	</head>
+	<body>
+		<div >这是一个div元素</div>
+		<input type="button" name="button" id="button" value="按钮" />
+	</body>
+</html>

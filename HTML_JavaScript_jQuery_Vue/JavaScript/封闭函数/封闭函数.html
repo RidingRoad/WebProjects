@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+		//封闭函数,一开始就执行,相当于兼顾了定义和调用	
+		//封闭函数方法1 (function(){})()
+		(function(){
+			alert('封闭函数方法1 (function(){})()');
+		})()
+			
+		//封闭函数形式2 !function(){}()	
+		!function(){
+			alert('封闭函数形式2 !function(){}()');
+		}()
+			
+		//封闭函数形式3 ~function(){}()	
+		~function(){
+			alert('封闭函数形式3 ~function(){}()');
+		}()
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

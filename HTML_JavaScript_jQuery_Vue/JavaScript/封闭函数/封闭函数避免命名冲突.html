@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var num1 = 12;
+				function myalert(){
+					alert('来自封闭函数外面的问候');
+				}
+				
+				//封闭函数
+				!function(){
+					var num1 = 24;
+					function myalert(){
+					alert('来自封闭函数里面的问候');}
+					
+				
+					alert(num1);
+					myalert();
+				}()
+					
+							
+				
+				alert(num1);
+				myalert();
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

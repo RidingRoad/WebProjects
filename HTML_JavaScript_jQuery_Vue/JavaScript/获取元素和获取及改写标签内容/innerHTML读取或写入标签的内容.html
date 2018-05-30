@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box22{
+				color:red;
+				text-decoration: underline;
+				/*font-size:50px;*/
+				
+			}
+		</style>
+		<script>
+			window.onload = function
+			(){
+				oDiv = document.getElementById('div1');
+				oDiv2 = document.getElementById('div2');
+				
+				oDiv2.className = 'box22';//修改类名
+				oDiv2.style.fontSize = '30px';//修改css样式
+				
+				alert(oDiv.innerHTML);
+				oDiv.innerHTML = '<h1>这是一个段落</h1>'
+				alert(oDiv.innerHTML);
+				
+				
+				oBtn = document.getElementById('btn1');
+				oBtn.onclick = myAlert;
+				function myAlert(){
+					alert(6666666666);
+				}
+				
+				oBtn2 = document.getElementById('btn2');
+				oBtn2.onclick = function(){
+					alert(2222222)
+				}
+				
+				
+				
+					
+				
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="div1">这是一个div1元素</div>
+		<div id="div2" class="box2">这是一个div2元素</div>
+		<input type="button" id="btn1" value="click1"/>
+		<input type="button" id="btn2" value="click2"/>
+	</body>
+</html>
