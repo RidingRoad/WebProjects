@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jq动画可以通过animate方法实现-->
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<!--<style>
+				#box1{
+					width: 300px;
+					height:300px;
+					background: orange;
+				}
+		</style>-->
+			
+		<script>
+			
+			
+			$(function()
+			{
+				$('#btn').click(function()
+				{
+					$('#img').stop().animate({'width':400+'px','height':400},2000,'linear',function()
+					{//动画里的像素不能带单位,要带单位的话要使用拼接,建议直接不带
+						alert('done');
+					});
+				})
+			});
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="animate" />
+		<div id="box1">	
+			<img id='img' src="../../JavaScript/练手实战/练习/images/goods003.jpg"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!--fadeIn,fadeOut,fadeToggle,hide,show,toggle,slideDown,slideUp,slideToggle-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			var animateList = ['fadeIn','fadeOut','fadeToggle','hide','show','toggle','slideDown','slideUp','slideToggle'];
+			$(function()
+			{
+				$('#btn').click(function()
+				{
+					for(var i = 0;i<10;i++)
+					{
+						$('#img').toggle(2000,'swing',function(){console.log('成功')});
+					}
+						
+//						$('#img').fadeOut(2000,'swing',function(){console.log('成功')});
+//						$('#img').fadeIn(2000,'swing',function(){console.log('成功')});
+//						$('#img').fadeToggle(2000,'swing',function(){console.log('成功')});
+//						$('#img').hide(2000,'swing',function(){console.log('成功')});
+//						$('#img').show(2000,'swing',function(){console.log('成功')});
+//						$('#img').toggle(2000,'swing',function(){console.log('成功')});
+//						$('#img').slideDown(2000,'swing',function(){console.log('成功')});
+//						$('#img').slideUp(2000,'swing',function(){console.log('成功')});
+//						$('#img').slideToggle(2000,'swing',function(){console.log('成功')});
+					
+					
+				});
+			});
+			
+		</script>
+		
+		
+		<style>
+			input{
+				float: left;
+			}
+			img
+			{
+				width: 1000px;
+				height: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<input id='btn' type="button" value="点击看动图" />
+		<img id='img' src="../../JavaScript/练手实战/练习/images/goods002.jpg" />
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function()
+			{//过滤:has()\not()\eq()
+				//选择class为p1的样式的width		
+				alert($('.p1').css('width'));
+				//设置class为p1的float样式为right
+				$('.p1').css({'fontSize':'80px'});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="myId">文字文字</div>
+		<div class="myClass">文字文字</div>
+		<input type="button" name='first' value="按钮" />
+		<div>文字文字</div>
+		<p class="p1" id='p1' style='width:200px;height:100px;font-size:50px;color:pink;background: orange'>文字</p>
+		<div>文字文字</div>
+		<div>文字文字</div>
+		
+</html>

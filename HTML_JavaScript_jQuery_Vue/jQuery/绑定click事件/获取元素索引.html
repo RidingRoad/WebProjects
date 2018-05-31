@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<!--获得匹配元素相对于其同胞元素的索引位置，此时可以用index()方法获取-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function()
+			{
+				alert($('ul li').eq(2).index());
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</body>
+</html>

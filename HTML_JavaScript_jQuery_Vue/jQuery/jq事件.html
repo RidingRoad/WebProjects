@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function()
+			{
+				//获得焦点
+				$('#text').focus();
+				//失去焦点
+				$('#text').blur(function()
+				{
+					if($('#text').val()!='')
+					{
+						alert('恭喜,填写完毕');
+					}else
+					{
+						alert('信息不能为空');
+					}
+					
+				});
+				//鼠标移入mouseenter,mouseleave及移出,hover(移入事件,移出事件)
+				$('#btn').hover(function()
+				{
+					$('#btn').css({'background-color':'gold'});
+				},function()
+				{
+					$('#btn').css({'background-color':'orange'});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<h1>我是标题1</h1>
+		</div>
+		<div id="box2">
+			<input id="btn" type="button" value="按钮" />
+			<br>
+			<label>输入信息</label><textarea id="text"></textarea>
+		</div>
+	</body>
+</html>

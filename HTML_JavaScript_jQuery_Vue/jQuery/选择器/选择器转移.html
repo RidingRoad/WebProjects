@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--//选择器转移的有:prev\prevAll\next\nextAll\parent\children\siblings\find-->
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			//入口函数
+			$(function()
+			{
+				$('td').css({'fontSize':'100px'})
+				$('td').eq(1).css({'color':'red'})
+				$('td').eq(1).next().css({'color':'orange'})
+				$('td').eq(1).prev().css({'color':'blue'})
+				$('td').parent().prev().css({'color':'green','fontSize':'20px'})
+				$('#last').find('.nine').css({'color':'pink'})
+				$('#last').not('.nine').css({'color':'gold'})
+				
+				
+				
+				
+				
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>头一</th>
+				<th>头二</th>
+				<th>头三</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr id="last">
+				<td class="seven">7</td>
+				<td class="eight">8</td>
+				<td class="nine">9</td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

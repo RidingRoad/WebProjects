@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function()
+			{
+				//获取html内容
+				alert($('#box1').html());
+				alert($('p').html());
+				//设置html内容
+				$('p').html('我是jq生成的内容');
+				//获取属性的值
+				alert($('img').prop('src'));
+				//设置属性的值
+				$('img').prop({'src':'../../JavaScript/练手实战/练习/images/goods010.jpg'});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<p>欢迎使用jQuery</p>
+			<img src="../../JavaScript/练手实战/练习/images/goods009.jpg" />
+		</div>
+	</body>
+</html>

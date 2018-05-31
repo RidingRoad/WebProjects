@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../vue.min.js" ></script>
+		<script>
+			window.onload = function()
+			{
+				var vm = new Vue(
+					{
+						el:"#app",
+						data:
+						{message:'',
+						textareamsg:'',
+						onecheck:true,
+						mixcheck:[],
+						single:'',
+						opt:'0'
+						}
+						
+						})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<!--//单行-->
+			<input type='text' v-model="message"/>
+			<h1>{{message}}</h1>
+			<hr />
+			<!--//多行-->
+			<textarea v-model="textareamsg"/></textarea>
+			<h1> {{textareamsg}}</h1>
+				<hr />
+			<!--单个复选框-->
+			<input type="checkbox" v-model="onecheck" />同意协议
+			<h1>{{onecheck}}</h1>
+				<hr />
+			<!--多个复选框-->
+			<input type="checkbox" value="0" v-model="mixcheck" />蓝驱
+			<input type="checkbox" value="1" v-model="mixcheck" />组曲
+			<input type="checkbox" value="2" v-model="mixcheck" />化妆
+			<h1>{{mixcheck}}</h1>
+				<hr />
+			<!--单选框-->
+			<input type="radio" value="0" v-model="single" />男
+			<input type="radio" value="1" v-model="single" />女
+			<input type="radio" value="2" v-model="single" />保密
+			<h1>{{single}}</h1>
+				<hr />
+			<!--下拉框-->
+			<select v-model="opt">
+				<option value="0">hhh</option>
+				<option value="1">iii</option>
+				<option value="2">jjj</option>
+			</select>
+			<h1>{{opt}}</h1>
+			
+		</div>
+		
+	</body>
+</html>
