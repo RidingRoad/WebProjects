@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		let name = 'tom';
+		let age = 18;
+		//字典(对象)中的属性和值的名字是一样的话,可以把冒号和值去掉
+		//字典(对象)中的函数简写:把:function去掉
+		let person={
+			name,
+			age,
+			showName(){//showName:function(){}
+			    //showName:()=>{}对象中函数简写按照去:function的写法,如果把function(){}简写成()=>{}将会导致取值错误
+//				alert(this.name);//this代指person
+				//setTimeout(触发的事件,倒计时)
+				//setInterval(触发的事件,倒计时)
+				//函数简写:function_name=(参数1,参数2)=>{}
+				//函数简写:function_name=参数1=>{}
+				//函数简写:function_name=()=>{}
+				setTimeout(()=>{
+					alert(this.name);
+					alert(6666666);
+				},2000);
+			}
+			
+		}
+		alert(person.name);//正常的读取
+//		alert(person.age);
+		person.showName()
+	</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+<script type="text/javascript" src="vue.min.js" ></script>
+<script>
+	window.onload = function(){
+		var vm = new Vue({
+			el:'#todo',
+			data:{
+				txt:'',
+				list:['学习HTML','学习CSS','学习JS'],
+				index:null
+			},
+			methods:{
+				fnAdd:function(){
+					if(this.txt==''){
+						return;
+					}
+					this.list.push(this.txt);
+					this.txt = '';
+					document.getElementById('#txt1'.focus();)
+				},
+				fnDel:function(index){
+					this.list.splice(index,1);
+				},
+				fnUp:function(index){
+					if(index==0){return;}
+					this.list.splice(index-1,0,this.list[index]);
+					this.list.splice(index+1,1);
+				},
+				fnDown:function(index){
+					if(this.list.length-1 ==index){return;}
+					this.list.splice(i+2,0,this.list[index]);
+					this.list.splice(index,1)
+				}
+			},
+			mounted:function(){
+				document.getElementById('#txt1'.focus();
+			}
+		})
+	}
+</script>
+</head>
+<body>
+
+	<div class="list_con" id="todo">
+	<h2>To do list</h2>
+		<input type="text" name="" id="txt1" class="inputtxt" v-model="txt">
+		<input type="button" name="" value="增加" id="btn1" class="inputbtn" @click="fnAdd"> 
+		
+		<ul id="list" class="list">
+
+			<li v-for="(item,index) in list">
+				<span>{{item}}</span>
+				<a href="javascript:;" class="up" @click="fnUp(index)"> ↑ </a>
+				<a href="javascript:;" class="down" @click="fnDown(index)"> ↓ </a>
+				<a href="javascript:;" class="del" @click="fnDel(index)">删除</a>
+			</li>
+			
+
+		</ul>
+
+	</div>
+</body>
+</html>

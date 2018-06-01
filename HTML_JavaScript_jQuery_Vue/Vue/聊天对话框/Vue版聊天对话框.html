@@ -79,26 +79,55 @@
     				
     				data:{
     					sel:'A',
-    					txt:''}
+    					txt:'',
+    					message:[{who:'A',data:'吃饭了吗？'},{who:'B',data:'还没呢，你呢？'}]
+    					},
+    				methods:
+    				{
+    					addTxt:function()
+    						{
+    						if(this.txt==''){return;}
+    							
+    						this.message.push({who:this.sel,data:this.txt});
+    						this.txt = '';
+							
+    						document.getElementById('talkwords').focus();
+    						document.getElementById('words').scrollTop=99999;
+    						
+    						}
+    				},
+    				mounted:function(){
+    					document.getElementById('talkwords').focus();
+    					document.getElementById('words').scrollTop=99999;
+    				}
     			})
     	}
     </script>
  
 </head>
 <body>
-	<div id="app">
-		<div class="talk_con">
-	        <div class="talk_show" id="words">
-	            <div class="atalk"><span>A说：吃饭了吗？</span></div>
-	            <div class="btalk"><span>B说：还没呢，你呢？</span></div>
+	<div >
+		<div class="talk_con" id="app">
+	        <div class="talk_show" id="words" >
+	        	
+	        		<div :class="[item.who=='A'?'atalk':'btalk']" v-for="item in message"><span>{{item.who}}说：{{item.data}}</span></div>
+	        		
+	        	
+	        		
+	            <!--<div class="atalk"><span>A说：吃饭了吗？</span></div>
+	            <div class="btalk"><span>B说：还没呢，你呢？</span></div>-->
 	        </div>
 	        <div class="talk_input">
 	            <select class="whotalk" id="who" v-model="sel">
-	                <option value="0">A说：</option>
-	                <option value="1">B说：</option>
+	                <option value="A">A说：</option>
+	                <option value="B">B说：</option>
+	                
 	            </select>
+	    
 	            <input type="text" class="talk_word" id="talkwords" v-model="txt">
-	            <input type="button" value="发送" class="talk_sub" id="talksub">
+	            <input type="button" value="发送" class="talk_sub" id="talksub" @click="addTxt">
+	            
+	           
 	        </div>
     	</div>
 	</div>

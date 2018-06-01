@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../vue.min.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<bread pos='新闻中心'></bread>
+			<bread pos='娱乐中心'></bread>
+			<bread pos='体育中心'></bread>
+		
+		</div>
+	</body>
+	<script>
+		Vue.component('bread',{
+			props:['pos'],
+			template:'<h1>首页>{{pos}}>正文</h1>'
+		})
+		
+		
+		let vm = new Vue({
+			el:'#app'
+		})
+		
+	</script>
+</html>

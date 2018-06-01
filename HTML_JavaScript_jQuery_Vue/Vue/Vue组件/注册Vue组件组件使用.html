@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../vue.min.js" ></script>
+	</head>
+	<body>
+		<div id='app'>
+			<!--调用组件:<组件名 自定义变量=值></组件名>-->
+			<my nm='RidingRoad'></my>
+			<my nm='hahaha'></my>
+			<my nm='RidingRoad'></my>
+			<my nm='hahaha'></my>
+			<my nm='RidingRoad'></my>
+		</div>
+	</body>
+	<script>
+		//注册全局组件Vue.component(组件名,{props:[自定义的变量],template:模版,data:函数})
+		Vue.component('my',{
+			//保存组件的HTML
+//			template:'<h1 @click="alert(666666)"> 我是Vue组件</h1>',
+			props:['nm'],//参数关键字不可改变
+			template:'<h1 @click="alert(name)"> 我是{{nm}}</h1>',
+			
+			//组件自定义参数,data必须是函数
+//			data:function(){
+			data:()=>{
+				return{
+					num:0,
+					name:'我还是RidingRoad'
+				}
+			}
+		})
+		let vm = new Vue({
+			el:'#app'
+		})
+	</script>
+</html>

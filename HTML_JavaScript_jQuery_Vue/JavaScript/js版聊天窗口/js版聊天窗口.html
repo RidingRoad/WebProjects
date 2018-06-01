@@ -82,22 +82,16 @@
 				//信息为空的话弹框提示
 				if(oTalkWords.value==''){alert('不能为空');}
 				else{if(oWho.value == 'A'){oWords.innerHTML = oWords.innerHTML + '<div class="atalk"><span>A说：' + oTalkWords.value + '</span></div>';}
-					else{oWords.innerHTML = oWords.innerHTML + '<div class="btalk"><span>B说：' + oTalkWords.value + '</span></div>';}}
-				
-				
-				
-				
-				
+					else{oWords.innerHTML = oWords.innerHTML + '<div class="btalk"><span>B说：' + oTalkWords.value + '</span></div>';}}		
+					
 			oTalkWords.value = '';//信息清空
 			
 			oTalkWords.focus();//光标回到输入框
 			oWords.scrollTop = 99999;
-			}
-			
-			
-			
+			}									
 		}
     </script>
+    
 </head>
 <body>
     <div class="talk_con">

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="vue.min.js" ></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<h1>
+				<!--过滤器的调用:Vue中自定义参数|过滤器里面函数的名称-->
+				{{txt|RMB}}
+			</h1>
+		</div>
+		
+	</body>
+	<script>
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				txt:'一亿'
+			},
+			filters:{
+				//过滤器:可以根据下面的函数进行判断进行数据处理
+				RMB:function(value){
+					if(value==''){
+					return value;
+				}else{
+					return value + '元';
+				}
+				}
+				
+			}
+		})
+	</script>
+</html>

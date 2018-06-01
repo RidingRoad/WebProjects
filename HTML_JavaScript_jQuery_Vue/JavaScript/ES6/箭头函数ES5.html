@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		let fnAlertES5 = function(a,b){//ES5
+			alert('fnAlertES5 = function(a,b){}');
+		}
+		
+		fnAlertES5(10,20);
+		
+		//箭头函数能找到this
+		let fnAlertES6 = (a,b)=>{//ES6新增
+			alert('fnAlertES6 = (a,b)=>{}');
+		}
+		
+		fnAlertES6(10,30);
+		
+		let fnAlertES6_ONE_PARA = a=>{//ES6新增
+			alert('fnAlertES6_ONE_PARA = a=>{}');
+		}
+		
+		fnAlertES6_ONE_PARA(50);
+		
+		let fnAlertES6_NONE_PARA =()=>{//ES6新增
+			alert('fnAlertES6_NONE_PARA =()=>{}');
+		}
+		
+		fnAlertES6_NONE_PARA();
+	</script>
+</html>
