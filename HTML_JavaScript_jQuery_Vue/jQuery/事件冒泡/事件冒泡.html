@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function(){
+				$('#grandson').click(function(){
+					alert('grandson')
+					return false;
+				})
+				$('#son').click(function(){
+					alert('son');
+					return false;})
+				$('#father').click(function(){
+					alert('father')
+				})
+			})
+		</script>
+		<style>
+			#father{
+				width: 600px;
+				height: 600px;
+				background-color: orange;
+			}
+			#son{
+				width: 400px;
+				height: 400px;
+				background-color: blue;
+			}
+			#grandson{
+				width: 200px;
+				height: 200px;
+				background-color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+			
+			<div id="son">
+				
+				<div id="grandson">
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

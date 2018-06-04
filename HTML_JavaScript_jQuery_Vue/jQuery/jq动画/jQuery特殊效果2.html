@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-1.12.4.min.js" ></script>
+		<script>
+			$(function(){
+				$('#btn').click(function(){
+					//在所有动画之前添加stop(),避免排队事件
+//					$('#box').stop().hide()
+//					$('#box').stop().show()
+//					$('#box').stop().toggle()
+//					$('#box').stop().fadeIn(4000,'swing',function(){alert(66666)})
+//					$('#box').stop().fadeOut(4000,'swing',function(){alert(66666)})
+//					$('#box').stop().fadeToggle(4000,'swing',function(){alert(66666)})
+//					$('#box').stop().slideUp(3000)  //向上消失
+//					$('#box').stop().slideDown(3000) //向下出现
+					$('#box').stop().slideToggle(1000) //向上向下切换卷起
+
+				})
+			});
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮"/>
+		<div id="box" style="display: none">
+			<img src="../JavaScript/练手实战/练习/images/goods001.jpg" alt="orange" title="橙子"/>
+		</div>
+	</body>
+</html>

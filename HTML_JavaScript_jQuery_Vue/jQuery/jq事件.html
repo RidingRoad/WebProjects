@@ -29,6 +29,9 @@
 				{
 					$('#btn').css({'background-color':'orange'});
 				});
+				$('#btn').click(function(){
+					$('#form1').submit()
+				})
 			});
 		</script>
 	</head>
@@ -37,9 +40,12 @@
 			<h1>我是标题1</h1>
 		</div>
 		<div id="box2">
-			<input id="btn" type="button" value="按钮" />
 			<br>
-			<label>输入信息</label><textarea id="text"></textarea>
+			<form id="form1" method="get" action="http://www.baidu.com/">
+				<label>输入信息</label><textarea id="text" name="txt" value="1"></textarea>
+				<input id="btn" type="button" value="提交" />
+			</form>
+			
 		</div>
 	</body>
 </html>
