@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>aaaaaa</p>
+
+{% block contentBlock %}
+<p>bbbb</p>
+<p>bbbbb</p>
+{% endblock contentBlock %}
+
+{% block footBlock %}
+<p>cccccc</p>
+{% block footBlock %}
+</body>
+</html>
