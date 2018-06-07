@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+
+    {{ form.csrf_token }}
+
+    {{ form.author_name.label }}
+    <p>{{ form.author.name }}</p>
+
+    {{ form.book_name.label }}
+    <p>{{ form.book.name }}</p>
+
+
+
+
+
+</form>
+</body>
+</html>

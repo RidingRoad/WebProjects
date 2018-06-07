@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>builtin variable</h1>
+<p>{{ config.DEBUG }}</p>
+<p>{{ config.url}}</p>
+<p>{{ g.name }}</p>
+{% for item  in my_list %}
+    {% if loop.index == 1 %}
+        <li style="background-color:red">{{ item.value }}</li>
+    {% elif loop.index==2 %}
+         <li style="background-color:blue">{{ item.value }}</li>
+        {% else %}
+         <li style="background-color:pink">{{ item.value }}</li>
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>
