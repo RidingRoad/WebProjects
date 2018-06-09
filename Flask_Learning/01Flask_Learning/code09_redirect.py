@@ -3,8 +3,8 @@ from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/demo1')
-def demo():
-    return 'redirect to demo1'
+def demo1():
+    return 'I am demo1'
 
 @app.route('/demo2')
 def demo2():

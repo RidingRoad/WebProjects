@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Built_in Filter</title>
+</head>
+<body>
+{#built_in filter for string#}
+<h1>{{ "<em>hello<em>"  | safe}}</h1> <!--# enable the html code-->
+<h1>{{ "<em>hello<em>"  | striptags}}</h1> <!--# enable the html code-->
+<h1>{{ 'hello'| capitalize}}</h1>
+<h1>{{ 'hello'| upper}}</h1>
+<h1>{{ 'hello'| lower}}</h1>
+<h1>{{ 'hello'| reverse}}</h1>
+<h1>{{ 'hello ridingRoad'| title}}</h1>
+<h1>{{ 'hello %s'|format('RidingRoad') }}</h1>
+<h1>{{ 'hello RidingRoad'| truncate(5,False,'***')}}</h1>
+{#过滤器”truncate”有3个参数，第一个是字符截取长度；第二个决定是否保留截取后的子串，默认是False，也就是当字符大于3后，只显示”…”，截取部分也不出现；第三个是省略符号，默认是”…”。#}
+{##built_filter for list #}
+<h1>{{ [1,2,3] }}</h1>
+<h1>{{ [1,2,3] |first}}</h1>
+<h1>{{ [1,2,3] |last}}</h1>
+<h1>{{ [1,2,3] |length}}</h1>
+<h1>{{ [1,2,3] |sum}}</h1>
+<h1>{{ [6,1,88888,23] |sort}}</h1>
+<h1>{{ [6,1,88888,23] |reverse|list}}</h1>
+{% filter upper %}
+<h1>sdsafds</h1>
+<h1>dfdfagthk</h1>
+<h1>kljktr</h1>
+<h1>jhgjjhlykr</h1>
+{% endfilter %}
+</body>
+</html>

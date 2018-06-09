@@ -5,15 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form method="post">
 
     {{ form.csrf_token }}
 
     {{ form.author_name.label }}
-    <p>{{ form.author.name }}</p>
+    <p>{{ form.author_name }}</p>
 
     {{ form.book_name.label }}
-    <p>{{ form.book.name }}</p>
+    <p>{{ form.book_name }}</p>
+
+    {{ form.submit }}
+
+    <hr>
+    {% for author in authors %}
+        <li>{{ author.name }}<a href="/delete_author/{{ author.id }}">delete</a></li>
+        <ul>
+            {% for book in author.books %}
+                <li>{{ book.name }}<a href="/delete_book/{{ book.id }}">delete</a></li>
+                {% endfor %}
+        </ul>
+    {% endfor %}
+
 
 
 

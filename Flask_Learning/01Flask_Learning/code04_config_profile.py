@@ -1,3 +1,5 @@
+# to know how to config the flask app  by files (app.config.from_pyfile(file_name))
+
 from flask import Flask,current_app
 #initialize the flask and pass it arguments, but always pass the first arguments __name__
 app = Flask(__name__)

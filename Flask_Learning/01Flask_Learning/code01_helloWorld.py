@@ -1,3 +1,4 @@
+# to primaryly know the flask work_flows
 from flask import Flask
 #initialize the flask and pass it an argument
 app = Flask(__name__)
@@ -11,4 +12,5 @@ def index():
 
 if __name__ == "__main__":
     #start the flask application
-    app.run(port='8888')
+    print(app.url_map)
+    app.run(debug=True)
