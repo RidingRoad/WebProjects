@@ -5,19 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<h1>builtin variable</h1>
-<p>{{ config.DEBUG }}</p>
-<p>{{ config.url}}</p>
-<p>{{ g.name }}</p>
-{% for item  in my_list %}
+<h1>BuiltIn variable:config;request;g;flash();get_flashed_messages()</h1>
+<h1>config.DEBUG:{{ config.DEBUG }}</h1>
+
+<h1>request.url:{{ request.url }}</h1>
+<h1>g.name:{{ g.name }}</h1>
+<h1>Loop</h1>
+{% for item in my_list %}
     {% if loop.index == 1 %}
-        <li style="background-color:red">{{ item.value }}</li>
-    {% elif loop.index==2 %}
-         <li style="background-color:blue">{{ item.value }}</li>
+    <li style="background-color: aqua">{{ item }}</li>
+    {% elif loop.index == 2 %}
+    <li style="background-color: brown">{{ item }}</li>
         {% else %}
-         <li style="background-color:pink">{{ item.value }}</li>
+    <li style="background-color: chartreuse">{{ item }}</li>
     {% endif %}
 {% endfor %}
-
+<h1>Flah get_flashed_messages()</h1>
+<h1>Must to set secret_key when you ues flash()</h1>
+{% for message in get_flashed_messages() %}
+{{ message }}
+<br>
+{% endfor %}
 </body>
 </html>

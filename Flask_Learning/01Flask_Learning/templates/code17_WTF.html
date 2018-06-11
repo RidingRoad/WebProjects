@@ -6,6 +6,32 @@
 </head>
 <body>
 
+<form method="post">
+{{ register_form_front.csrf_token }}
+{#if the above statement is not opened, the form will lose the validate password equal#}
+    {{ register_form_front.user_name.label }}
+    {{ register_form_front.user_name }}
+    {% for message in register_form_front.user_name.errors %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <br>
+
+    {{ register_form_front.password.label }}
+    {{ register_form_front.password }}
+    {% for message in register_form_front.password.errors %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <br>
+
+    {{ register_form_front.confirm_password.label }}
+    {{ register_form_front.confirm_password }}
+    {% for message in register_form_front.confirm_password.errors %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <br>
+
+    {{ register_form_front.submit }}
+</form>
 
 </body>
 </html>

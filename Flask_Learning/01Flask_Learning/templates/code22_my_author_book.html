@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {{ append_form.csrf_token }}
+    {{ append_form.au_info.label }}
+    <p>{{ append_form.au_info }}</p>
+    {{ append_form.bk_info.label }}
+    <P>{{ append_form.bk_info }}</P>
+    {{ append_form.submit }}
+</form>
+
+<h2>书籍列表</h2>
+<ul>
+{% for author in authors %}
+    <li>
+        {{ author.name }}
+        <ul>
+            {% for book in books.filter_by() %}
+                {% if  %}
+                <li>{{ book.name }}
+            {% else %}
+                    <li>无书籍</li>
+            {% endfor %}
+        </ul>
+
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
