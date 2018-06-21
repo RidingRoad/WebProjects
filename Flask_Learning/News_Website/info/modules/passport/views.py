@@ -14,7 +14,7 @@ from datetime import datetime
 def get_image_code():
     "获取图片验证码"
     # 获取当前图片的UUID编号
-    image_code_id = request.args.get("image_code_id")
+    image_code_id = request.args.get("code_id")
     # 生成验证码
     """
     generate_captcha()  Returns:
@@ -167,11 +167,12 @@ def login():
 
     return jsonify(errno=RET.OK,errmsg="登录成功")
 
-@passport_blue.route("/logout",methods=["POST"])
+@passport_blue.route("/logout",methods=["POST","GET"])
 def logout():
     session.pop("user_id",None)
     session.pop("nick_name",None)
     session.pop("mobile",None)
+    session.pop("is_admin",None)
     return jsonify(errno=RET.OK,errmsg="退出成功")
 
 
