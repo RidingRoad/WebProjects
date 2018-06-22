@@ -158,5 +158,42 @@ def comment_like():
 
 
 
+@news_blue.route("/followed_user",methods=["POST"])
+@user_login_data
+def followed_user():
+    if not g.user:
+        return jsonify(errno=RET.SESSIONERR,errmsg="未登录")
+    user_id = request.json.get("user_id")
+    action = request.json.get("action")
+
+    if not all([user_id,action]):
+        return jsonify(errno=RET.PARAMERR,errmsg="参数不全")
+    if action not in ("follow","unfollow"):
+        return jsonify(errno=RET.PARAMERR,errmsg="action参数错误")
+    try:
+        target_user=User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR,errmsg="数据库查询失败")
+    if not target_user:
+        return jsonify(errno=RET.NODATA,errmsg="未查询到用户数据")
+    if action == "follow":
+        if target_user.followers.filter(User.id==g.user.id).count()>0:
+            return jsonify(errno=RET.DATAEXIST,errmsg="已关注")
+        target_user.followers.append(g.user)
+    else:
+        if target_user.followers.filter(User.id==g.user.id).count()>0:
+            target_user.followers.remove(g.user)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR,errmsg="数据保存错误")
+    return jsonify(errno=RET.OK,errmsg="操作成功")
+
+
+
+
 
 

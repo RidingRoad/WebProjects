@@ -39,7 +39,7 @@ def get_image_code():
     return response
 
 
-@passport_blue.route("/smscode",methods=["POST"])
+@passport_blue.route("/sms_code",methods=["POST"])
 def smscode():
     param_dict = request.json
     mobile = param_dict.get("mobile")

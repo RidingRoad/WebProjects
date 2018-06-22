@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="bookmark" href="/favicon.ico"/>
     <meta charset="UTF-8">
     <title>{% block titleBlock %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="../../static/news/css/reset.css">
@@ -13,74 +15,63 @@
     <div class="header_con">
         <div class="header">
             <a href="/" class="logo fl"><img src="../../static/news/images/logo.png" alt="logo"></a>
-            {% block categoryBlock %}
-
-            {% endblock %}
-
-
+            {% block categoryBlock %}{% endblock %}
              {# 判断用户是否登录 #}
-        {% if data.user_info %}
+            {% if data.user_info %}
             {# 如果登录，则显示用户信息 #}
-            <div class="user_login fr">
-                <img src="{% if data.user_info.avatar_url %}
-                    {{ data.user_info.avatar_url }}
-                {% else %}../../static/news/images/person01.png{% endif %}" class="lgin_pic">
-                <a href="/user/info" id="nick_name">{{ data.user_info.nick_name }}</a>
-                <a href="javascript:;" onclick="logout()">退出</a>
-            </div>
-        {% else %}
+                <div class="user_login fr">
+                    <img src="{% if data.user_info.avatar_url %}
+                        {{ data.user_info.avatar_url }}
+                    {% else %}../../static/news/images/person01.png{% endif %}" class="lgin_pic">
+                    <a href="/user/info" id="nick_name">{{ data.user_info.nick_name }}</a>
+                    <a href="javascript:;" onclick="logout()">退出</a>
+                </div>
+            {% else %}
             {# 如果没有登录，则显示登录注册按钮 #}
             <div class="user_btns fr">
                 <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
             </div>
-        {% endif %}
-
-
-
-        </div>
+             {% endif %}
+            </div>
     </div>
 
     <div class="conter_con">
+
          {% block contentBlock %}
-
          {% endblock %}
-            {% block authorBlock %}
 
-            {% endblock %}
         {% block rankBlock %}
         <div class="rank_con fr">
-
+            {% block authorBlock %}
+            {% endblock %}
             <div class="rank_title">
                 <h3>点击排行</h3>
             </div>
             <ul class="rank_list">
-
                   {% for news in data.click_news_list %}
                      <li><span class="{{ loop.index0 | indexClass }}">{{ loop.index }}</span><a href="/news/{{ news.id }}">{{ news.title }}</a></li>
                   {% endfor %}
-            {% endblock %}
-
-
-
             </ul>
         </div>
+        {% endblock %}
     </div>
+
     {% block footerBlock %}
-    <div class="footer">
-        <div class="footer_links">
-            <a href="">关于我们</a>
-            <span>|</span>
-            <a href="">联系我们</a>
-            <span>|</span>
-            <a href="">招聘人才</a>
-            <span>|</span>
-            <a href="">友情链接</a>
+        <div class="footer">
+            <div class="footer_links">
+                <a href="">关于我们</a>
+                <span>|</span>
+                <a href="">联系我们</a>
+                <span>|</span>
+                <a href="">招聘人才</a>
+                <span>|</span>
+                <a href="">友情链接</a>
+            </div>
+            <p class="copyright">
+                CopyRight © 2018 新经资讯信息技术有限公司 All Rights Reserved<br />
+    电话：010-****888    京ICP备*******8号
+            </p>
         </div>
-        <p class="copyright">
-            CopyRight © 2018 新经资讯信息技术有限公司 All Rights Reserved<br />
-电话：010-****888    京ICP备*******8号
-        </p>
-    </div>
     {% endblock %}
 
     <!-- 登录表单 -->

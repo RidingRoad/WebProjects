@@ -140,9 +140,28 @@ def news_review():
 def news_review_detail():
     if request.method == "GET":
         news_id = request.args.get("news_id")
-        news = News.query.get(news_id)
+        news = None
+        # news = News.query.get(news_id)
+        try:
+            news = News.query.get(news_id)
+        except Exception as e:
+            current_app.logger.error(e)
+        if not news:
+            return render_template("admin/news_edit_detail.html",data={"errmsg":"没有此新闻"})
+        categories = Category.query.all()
+        categories_list = []
+        for category in categories:
+            category_dict = category.to_dict()
+            category_dict["is_selected"]=False
+            if category.id == news.category_id:
+                # 默认显示原来的分类
+                category_dict["is_selected"] = True
+            categories_list.append(category_dict)
+        categories_list.pop(0)
+
         data = {
-            "news":news.to_dict()
+            "news":news.to_dict(),
+            "categories":categories_list
         }
         return render_template("admin/news_review_detail.html",data=data)
     action = request.json.get("action")
@@ -224,12 +243,14 @@ def news_edit_detail():
                 category_dict["is_selected"] = True
             categories_list.append(category_dict)
         categories_list.pop(0)
+        print("categories_list_object:",categories_list)
 
         data = {
             "news":news.to_dict(),
             "categories":categories_list,
 
         }
+        print("data.categories:",data.get("categories"))
 
         return render_template("admin/news_edit_detail.html",data=data)
 

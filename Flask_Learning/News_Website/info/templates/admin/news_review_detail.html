@@ -25,7 +25,7 @@
     <select class="sel_opt" name="category_id">
         {% for category in data.categories %}
             # 默认显示原来的分类
-            <option value="{{ category.id }}" {% if category.is_selected %}selected{% endif %}>{{ category.name }}</option>
+            <option value="{{ category.id }}"  {% if category.is_selected %}selected{% endif %}>{{ category.name }}</option>
         {% endfor %}
     </select>
 </div>
