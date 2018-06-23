@@ -33,6 +33,7 @@ def base_info():
     nick_name = request.json.get("nick_name")
     signature = request.json.get("signature")
     gender = request.json.get("gender")
+    print(gender)
 
     user.nick_name = nick_name
     user.signature = signature
