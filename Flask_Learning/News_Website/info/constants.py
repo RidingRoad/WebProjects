@@ -8,13 +8,13 @@ SMS_CODE_REDIS_EXPIRES = 300
 QINIU_DOMIN_PREFIX = "http://oyucyko3w.bkt.clouddn.com/"
 
 # 七牛access_key
-access_key = "yV4GmNBLOgQK-1Sn3o4jktGLFdFSrlywR2C-hvsW"
+access_key = "XXX"
 
 # 七牛secret_key
-secret_key = "bixMURPL6tHjrb8QKVg2tm7n9k8C7vaOeQ4MEoeW"
+secret_key = "XXX"
 
 # 七牛存储的名字
-bucket_name = "ihome"
+bucket_name = "XXX"
 
 # 首页展示最多的新闻数量
 HOME_PAGE_MAX_NEWS = 10
